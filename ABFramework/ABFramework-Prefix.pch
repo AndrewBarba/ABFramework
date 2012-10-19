@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ABFramework' target in the 'ABFramework' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
