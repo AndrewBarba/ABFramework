@@ -22,7 +22,7 @@
     
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
         NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        if (complete) complete(output,error);
+        if (complete) complete(output,data,error);
     }];
 }
 
@@ -47,7 +47,7 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
                                NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                               if (complete) complete(output,error);
+                               if (complete) complete(output,data,error);
                            }];
 }
 

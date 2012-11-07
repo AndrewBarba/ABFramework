@@ -13,6 +13,9 @@
 @interface ABAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
 
+// Public Dynamic Methods
+-(BOOL)isFirstRun;
+
 // Static Get Methods
 +(ABAppDelegate *)appDelegate;
 +(UIDocument *)mainDocument;

@@ -18,17 +18,16 @@
 #define VERSION_KEY    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 // COMPLETION HANDLERS
-typedef void(^DoneCompletionHandler)(void);
-typedef void(^SuccessCompletionHandler)(BOOL);
-typedef void(^IntegerCompletionHandler)(NSUInteger);
-typedef void(^ArrayCompletionHandler)(NSMutableArray*);
-typedef void(^DictionaryCompletionHandler)(NSDictionary*);
-typedef void(^StringCompletionHandler)(NSString*);
-typedef void(^RequestCompletionHandler)(NSString*,NSError*);
+typedef void(^DoneCompletionHandler)       (void);
+typedef void(^SuccessCompletionHandler)    (BOOL);
+typedef void(^IntegerCompletionHandler)    (NSUInteger);
+typedef void(^ArrayCompletionHandler)      (NSArray*);
+typedef void(^DictionaryCompletionHandler) (NSDictionary*);
+typedef void(^StringCompletionHandler)     (NSString*);
+typedef void(^RequestCompletionHandler)    (NSString*,NSData*,NSError*);
 
 @interface AB : NSObject
-+(BOOL)isFirstRun;
++(BOOL)isFirstRun; // Should only be called by the app delegate
 +(BOOL)isiPad;
 +(void)alertTitle:(NSString *)title withMessage:(NSString *)message;
-
 @end

@@ -11,7 +11,7 @@
 @interface ABAppDelegate()
 @property (nonatomic, strong) UIManagedDocument *mainDocument;
 @property (nonatomic, strong) NSManagedObjectContext *importContext;
-
+@property (nonatomic) BOOL isFirstRun;
 -(void)setupDocument;
 @end
 
@@ -55,6 +55,13 @@
 {
     ABAppDelegate *appDelegate = [ABAppDelegate appDelegate];
     [appDelegate updateContexts];
+}
+
+/*** LAUNCH SETUP ***/
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.isFirstRun = [AB isFirstRun];
+    return YES;
 }
 
 /*** CORE DATA SETUP ***/
