@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B801F26E1653622300DBBFFE /* UILabel+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B801F26D1653622300DBBFFE /* UILabel+AB.m */; };
+		B8430C12165563A9007DE400 /* UIView+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B8430C11165563A9007DE400 /* UIView+AB.m */; };
 		B884BAB0163326D700AEAA08 /* ABActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAB163326D700AEAA08 /* ABActionSheet.m */; };
 		B884BAB1163326D700AEAA08 /* ABAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAD163326D700AEAA08 /* ABAlertView.m */; };
 		B884BAB2163326D700AEAA08 /* ABRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAF163326D700AEAA08 /* ABRequest.m */; };
 		B8D54FCC16337FB90074A7A0 /* ABTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */; };
 		B8D54FD0163387470074A7A0 /* ABCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D54FCF163387470074A7A0 /* ABCollectionViewController.m */; };
+		B8DF8F38164D7C800049B85A /* NSArray+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF8F37164D7C7F0049B85A /* NSArray+AB.m */; };
+		B8DF8F3C164D7DE90049B85A /* ABRequired.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF8F3B164D7DE80049B85A /* ABRequired.m */; };
 		B8E2058716321BAE009772AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2058616321BAE009772AC /* Foundation.framework */; };
 		B8E2059516321BD9009772AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2059416321BD9009772AC /* CoreGraphics.framework */; };
 		B8E2059716321BE0009772AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E2059616321BE0009772AC /* UIKit.framework */; };
@@ -39,6 +43,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B801F26C1653622300DBBFFE /* UILabel+AB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+AB.h"; sourceTree = "<group>"; };
+		B801F26D1653622300DBBFFE /* UILabel+AB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+AB.m"; sourceTree = "<group>"; };
+		B8430C10165563A9007DE400 /* UIView+AB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AB.h"; sourceTree = "<group>"; };
+		B8430C11165563A9007DE400 /* UIView+AB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AB.m"; sourceTree = "<group>"; };
 		B884BAAA163326D700AEAA08 /* ABActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABActionSheet.h; sourceTree = "<group>"; };
 		B884BAAB163326D700AEAA08 /* ABActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABActionSheet.m; sourceTree = "<group>"; };
 		B884BAAC163326D700AEAA08 /* ABAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAlertView.h; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewController.m; sourceTree = "<group>"; };
 		B8D54FCE163387470074A7A0 /* ABCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCollectionViewController.h; sourceTree = "<group>"; };
 		B8D54FCF163387470074A7A0 /* ABCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABCollectionViewController.m; sourceTree = "<group>"; };
+		B8DF8F36164D7C7F0049B85A /* NSArray+AB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+AB.h"; sourceTree = "<group>"; };
+		B8DF8F37164D7C7F0049B85A /* NSArray+AB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+AB.m"; sourceTree = "<group>"; };
+		B8DF8F3A164D7DE80049B85A /* ABRequired.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRequired.h; sourceTree = "<group>"; };
+		B8DF8F3B164D7DE80049B85A /* ABRequired.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRequired.m; sourceTree = "<group>"; };
 		B8E2058316321BAE009772AC /* libABFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libABFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8E2058616321BAE009772AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B8E2058A16321BAE009772AC /* ABFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ABFramework-Prefix.pch"; sourceTree = "<group>"; };
@@ -122,6 +134,10 @@
 			children = (
 				B8E2059C16321C91009772AC /* AB.h */,
 				B8E2059D16321C91009772AC /* AB.m */,
+				B8DF8F3A164D7DE80049B85A /* ABRequired.h */,
+				B8DF8F3B164D7DE80049B85A /* ABRequired.m */,
+				B8430C10165563A9007DE400 /* UIView+AB.h */,
+				B8430C11165563A9007DE400 /* UIView+AB.m */,
 				B884BAAA163326D700AEAA08 /* ABActionSheet.h */,
 				B884BAAB163326D700AEAA08 /* ABActionSheet.m */,
 				B884BAAC163326D700AEAA08 /* ABAlertView.h */,
@@ -130,12 +146,16 @@
 				B884BAAF163326D700AEAA08 /* ABRequest.m */,
 				B8E205A016321C91009772AC /* ABAppDelegate.h */,
 				B8E205A116321C91009772AC /* ABAppDelegate.m */,
+				B801F26C1653622300DBBFFE /* UILabel+AB.h */,
+				B801F26D1653622300DBBFFE /* UILabel+AB.m */,
 				B8E205A416321C91009772AC /* NSData+AB.h */,
 				B8E205A516321C91009772AC /* NSData+AB.m */,
 				B8E205A616321C91009772AC /* NSDate+AB.h */,
 				B8E205A716321C91009772AC /* NSDate+AB.m */,
 				B8E205A816321C91009772AC /* NSString+AB.h */,
 				B8E205A916321C91009772AC /* NSString+AB.m */,
+				B8DF8F36164D7C7F0049B85A /* NSArray+AB.h */,
+				B8DF8F37164D7C7F0049B85A /* NSArray+AB.m */,
 				B8E205AA16321C91009772AC /* UICollectionView+AB.h */,
 				B8E205AB16321C91009772AC /* UICollectionView+AB.m */,
 				B8E205AC16321C91009772AC /* UITableView+AB.h */,
@@ -220,6 +240,10 @@
 				B884BAB2163326D700AEAA08 /* ABRequest.m in Sources */,
 				B8D54FCC16337FB90074A7A0 /* ABTableViewController.m in Sources */,
 				B8D54FD0163387470074A7A0 /* ABCollectionViewController.m in Sources */,
+				B8DF8F38164D7C800049B85A /* NSArray+AB.m in Sources */,
+				B8DF8F3C164D7DE90049B85A /* ABRequired.m in Sources */,
+				B801F26E1653622300DBBFFE /* UILabel+AB.m in Sources */,
+				B8430C12165563A9007DE400 /* UIView+AB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

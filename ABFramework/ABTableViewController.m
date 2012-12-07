@@ -7,7 +7,7 @@
 //
 
 #import "ABTableViewController.h"
-#import <QuartzCore/QuartzCore.h>
+#import "ABAppDelegate.h"
 #import "UITableView+AB.h"
 
 @interface ABTableViewController ()
@@ -27,7 +27,7 @@
     if (sortDescriptors) request.sortDescriptors = sortDescriptors;
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:[ABAppDelegate mainContext]
-                                                                          sectionNameKeyPath:nil
+                                                                          sectionNameKeyPath:nil//@"target.date"
                                                                                    cacheName:nil];
 }
 
@@ -71,7 +71,7 @@
             [self.tableView reloadData];
         }
     }
-    [self.contentChangedDelegate contentDidChange:[self numberOfObjects]];
+    [self.contentChangedDelegate tableViewController:self contentDidChange:[self numberOfObjects]];
 }
 
 // TableView Delegate Methods
@@ -83,7 +83,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self numberOfObjects];
+    return [self.fetchedResultsController.sections[section] numberOfObjects];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -115,7 +115,7 @@
 
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-    [self.contentChangedDelegate contentDidChange:[self numberOfObjects]];
+    [self.contentChangedDelegate tableViewController:self contentDidChange:[self numberOfObjects]];
     [self.tableView endUpdates];
     CGFloat delayInSeconds = 0.3;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);

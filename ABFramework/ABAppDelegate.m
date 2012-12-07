@@ -39,13 +39,13 @@
     return [ABAppDelegate appDelegate].importContext;
 }
 
-+(void)useDocument:(DoneCompletionHandler)complete
++(void)useDocument:(DoneHandler)complete
 {
     ABAppDelegate *appDelegate = [ABAppDelegate appDelegate];
     [appDelegate useDocument:complete];
 }
 
-+(void)resetDocument:(DoneCompletionHandler)complete
++(void)resetDocument:(DoneHandler)complete
 {
     ABAppDelegate *appDelegate = [ABAppDelegate appDelegate];
     [appDelegate resetDocument:complete];
@@ -57,10 +57,16 @@
     [appDelegate updateContexts];
 }
 
++(void)saveDocument
+{
+    ABAppDelegate *appDelegate = [ABAppDelegate appDelegate];
+    [appDelegate saveDocument];
+}
+
 /*** LAUNCH SETUP ***/
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.isFirstRun = [AB isFirstRun];
+    self.isFirstRun = [ABRequired isFirstRun];
     return YES;
 }
 
@@ -79,7 +85,7 @@
     }
 }
 
--(void)resetDocument:(DoneCompletionHandler)complete
+-(void)resetDocument:(DoneHandler)complete
 {
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self.mainDocument.fileURL path]]) {
         if (self.mainDocument.documentState == UIDocumentStateNormal) {
@@ -96,7 +102,7 @@
     }
 }
 
--(void)useDocument:(DoneCompletionHandler)complete
+-(void)useDocument:(DoneHandler)complete
 {
     [self setupDocument];
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self.mainDocument.fileURL path]]) {
@@ -128,10 +134,10 @@
 {
     [self.mainDocument.managedObjectContext performBlockAndWait:^{
         [self.mainDocument.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
-        [self.importContext performBlockAndWait:^{
+        [self.importContext performBlock:^{
             [self.importContext reset];
+//            NSLog(@"Merged importContext");
         }];
-        NSLog(@"Merged importContext");
     }];
 }
 
@@ -150,6 +156,42 @@
     [self.importContext performBlockAndWait:^{
         [self.importContext save:nil];
     }];
+}
+
+-(void)saveDocument
+{
+    [self.mainDocument performAsynchronousFileAccessUsingBlock:^{
+        [self.mainDocument saveToURL:self.mainDocument.fileURL
+                    forSaveOperation:UIDocumentSaveForOverwriting
+                   completionHandler:nil];
+    }];
+}
+
+/*** LIFECYLCLE METHODS ***/
+
+-(void)applicationDidEnterBackground:(UIApplication *)application
+{
+    [self saveDocument];
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+    
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+    
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+    
 }
 
 @end

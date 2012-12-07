@@ -12,4 +12,6 @@
 -(id)JSON;
 -(NSString *)URLEncode;
 -(NSString *)strip;
+-(BOOL)isEmpty;
+-(NSDate *)dateWithFormat:(NSString *)format;
 @end

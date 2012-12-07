@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AB.h"
+#import "ABRequired.h"
 
 @interface ABActionSheet : UIActionSheet
 +(void)showWithTitle:(NSString *)title
@@ -15,5 +15,5 @@
 destructiveButtonTitle:(NSString *)destructiveButtonTitle
    otherButtonTitles:(NSArray *)otherButtonTitles
               inView:(UIView *)view
-    selectionHandler:(IntegerCompletionHandler)selectionHandler;
+    selectionHandler:(IntegerHandler)selectionHandler;
 @end

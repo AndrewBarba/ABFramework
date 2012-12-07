@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "AB.h"
-#import "ABAppDelegate.h"
 
 @protocol TableViewContentChangedDelegate <NSObject>
--(void)contentDidChange:(NSUInteger)numberOfItems;
+-(void)tableViewController:(UITableViewController *)controller contentDidChange:(NSUInteger)numberOfItems;
 @end
 
 @interface ABTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>

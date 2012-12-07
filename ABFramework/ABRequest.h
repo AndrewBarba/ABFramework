@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AB.h"
+#import "ABRequired.h"
 
 @interface ABRequest : NSObject
-+(void)reqeustToURL:(NSURL *)url onCompletion:(RequestCompletionHandler)complete;
-+(void)reqeustToURL:(NSURL *)url withData:(id)data onCompletion:(RequestCompletionHandler)complete;
-+(void)requestGETWithData:(NSDictionary *)data toPath:(NSString *)path onCompletion:(RequestCompletionHandler)complete;
-+(void)requestPOSTWithData:(NSDictionary *)data toPath:(NSString *)path onCompletion:(RequestCompletionHandler)complete;
++(void)reqeustToURL:(NSURL *)url onCompletion:(RequestHandler)complete;
++(void)reqeustToURL:(NSURL *)url withData:(id)data onCompletion:(RequestHandler)complete;
++(void)requestGETWithData:(NSDictionary *)data toPath:(NSString *)path onCompletion:(RequestHandler)complete;
++(void)requestPOSTWithData:(NSDictionary *)data toPath:(NSString *)path onCompletion:(RequestHandler)complete;
 @end

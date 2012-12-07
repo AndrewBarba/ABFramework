@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@protocol TableViewContentChangedDelegate <NSObject>
+@protocol CollectionViewContentChangedDelegate <NSObject>
 -(void)contentDidChange:(NSUInteger)numberOfItems;
 @end
 
 @interface ABCollectionViewController : UICollectionViewController <NSFetchedResultsControllerDelegate>
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, weak) id <TableViewContentChangedDelegate> contentChangedDelegate;
+@property (nonatomic, weak) id <CollectionViewContentChangedDelegate> contentChangedDelegate;
 
 // Dynamic Methods
 -(void)changeRequestEntity:(NSString *)entity;

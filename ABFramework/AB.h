@@ -7,27 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import "ABRequired.h"
+#import "ABRequest.h"
 #import "NSData+AB.h"
 #import "NSString+AB.h"
 #import "NSDate+AB.h"
-
-// APP INFO
-#define APP_NAME       @"abarba_app"
-#define BUILD_KEY      [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey]
-#define REFRESH_DB_KEY [NSString stringWithFormat:@"%@_%@",APP_NAME,BUILD_KEY]
-#define VERSION_KEY    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
-
-// COMPLETION HANDLERS
-typedef void(^DoneCompletionHandler)       (void);
-typedef void(^SuccessCompletionHandler)    (BOOL);
-typedef void(^IntegerCompletionHandler)    (NSUInteger);
-typedef void(^ArrayCompletionHandler)      (NSArray*);
-typedef void(^DictionaryCompletionHandler) (NSDictionary*);
-typedef void(^StringCompletionHandler)     (NSString*);
-typedef void(^RequestCompletionHandler)    (NSString*,NSData*,NSError*);
+#import "NSArray+AB.h"
+#import "ABAppDelegate.h"
+#import "ABActionSheet.h"
+#import "ABAlertView.h"
+#import "UICollectionView+AB.h"
+#import "UITableView+AB.h"
+#import "ABTableViewController.h"
+#import "ABCollectionViewController.h"
+#import "UILabel+AB.h"
+#import "UIView+AB.h"
 
 @interface AB : NSObject
-+(BOOL)isFirstRun; // Should only be called by the app delegate
-+(BOOL)isiPad;
-+(void)alertTitle:(NSString *)title withMessage:(NSString *)message;
+
 @end

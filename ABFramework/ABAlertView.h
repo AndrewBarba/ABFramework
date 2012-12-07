@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AB.h"
+#import "ABRequired.h"
 
 @interface ABAlertView : UIAlertView
 +(void)alertWithTitle:(NSString *)title
               message:(NSString *)message
     cancelButtonTitle:(NSString *)cancelButtonTitle
     otherButtonTitles:(NSArray *)otherButtonTitles
-     selectionHandler:(IntegerCompletionHandler)selectionHandler;
+     selectionHandler:(IntegerHandler)selectionHandler;
 @end

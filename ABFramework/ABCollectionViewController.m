@@ -94,7 +94,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [[[self.fetchedResultsController sections] objectAtIndex:section] numberOfObjects];
+    return [self.fetchedResultsController.sections[section] numberOfObjects];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

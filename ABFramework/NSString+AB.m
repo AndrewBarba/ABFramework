@@ -30,4 +30,17 @@
 {
     return [self stringByReplacingOccurrencesOfString:@"\\" withString:@""];
 }
+
+-(BOOL)isEmpty
+{
+    return [self isEqualToString:@""];
+}
+
+-(NSDate *)dateWithFormat:(NSString *)format
+{
+    NSDateFormatter *formater = [[NSDateFormatter alloc] init];
+    formater.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:-3600*5];
+    formater.dateFormat = format;
+    return [formater dateFromString:self];
+}
 @end

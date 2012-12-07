@@ -9,7 +9,7 @@
 #import "ABAlertView.h"
 
 @interface ABAlertView()
-@property (nonatomic, strong) IntegerCompletionHandler selectionHandler;
+@property (nonatomic, strong) IntegerHandler selectionHandler;
 @end
 
 @implementation ABAlertView
@@ -18,7 +18,7 @@
               message:(NSString *)message
     cancelButtonTitle:(NSString *)cancelButtonTitle
     otherButtonTitles:(NSArray *)otherButtonTitles
-     selectionHandler:(IntegerCompletionHandler)selectionHandler
+     selectionHandler:(IntegerHandler)selectionHandler
 {
     ABAlertView *alertView = [[ABAlertView alloc] initWithTitle:title
                                                         message:message
@@ -32,7 +32,7 @@
                       message:(NSString *)message
             cancelButtonTitle:(NSString *)cancelButtonTitle
             otherButtonTitles:(NSArray *)otherButtonTitles
-             selectionHandler:(IntegerCompletionHandler)selectionHandler
+             selectionHandler:(IntegerHandler)selectionHandler
 {
     self = [super init];
     if (self) {

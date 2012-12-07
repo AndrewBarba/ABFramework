@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "AB.h"
+#import "ABRequired.h"
 
 @interface ABAppDelegate : UIResponder <UIApplicationDelegate>
 @property (strong, nonatomic) UIWindow *window;
@@ -23,8 +23,8 @@
 +(NSManagedObjectContext *)importContext;
 
 // UIDocument Methods
-+(void)useDocument:(DoneCompletionHandler)complete;
-+(void)resetDocument:(DoneCompletionHandler)complete;
++(void)useDocument:(DoneHandler)complete;
++(void)resetDocument:(DoneHandler)complete;
 +(void)updateContexts;
-
++(void)saveDocument;
 @end

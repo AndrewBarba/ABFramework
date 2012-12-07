@@ -13,7 +13,7 @@
 /*** STATIC REQUEST METHODS ***/
 
 +(void)reqeustToURL:(NSURL *)url
-       onCompletion:(RequestCompletionHandler)complete
+       onCompletion:(RequestHandler)complete
 {
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
@@ -28,7 +28,7 @@
 
 +(void)reqeustToURL:(NSURL *)url
            withData:(id)data
-       onCompletion:(RequestCompletionHandler)complete
+       onCompletion:(RequestHandler)complete
 {
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
@@ -53,14 +53,15 @@
 
 +(void)requestPOSTWithData:(NSDictionary *)data
                     toPath:(NSString *)path
-              onCompletion:(RequestCompletionHandler)complete
+              onCompletion:(RequestHandler)complete
 {
+    NSLog(@"%@",path);
     [ABRequest reqeustToURL:[NSURL URLWithString:path] withData:data onCompletion:complete];
 }
 
 +(void)requestGETWithData:(NSDictionary *)data
                    toPath:(NSString *)path
-             onCompletion:(RequestCompletionHandler)complete
+             onCompletion:(RequestHandler)complete
 {
     __block NSString *fullPath = [NSString stringWithFormat:@"%@?",path];
     [data enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop){
@@ -68,6 +69,7 @@
         value = [value URLEncode];
         fullPath = [fullPath stringByAppendingFormat:@"&%@=%@",key,value];
     }];
+    NSLog(@"%@",fullPath);
     [ABRequest reqeustToURL:[NSURL URLWithString:fullPath] onCompletion:complete];
 }
 @end
