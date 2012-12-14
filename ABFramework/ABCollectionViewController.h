@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ABRequired.h"
 
 @protocol CollectionViewContentChangedDelegate <NSObject>
 -(void)contentDidChange:(NSUInteger)numberOfItems;

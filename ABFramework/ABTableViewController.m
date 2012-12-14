@@ -20,6 +20,7 @@
                               predicate:(NSPredicate *)predicate
                                   limit:(NSInteger)limit
                      andSortDescriptors:(NSArray *)sortDescriptors
+                 withSectionNameKeyPath:(NSString *)sectionKeyPath
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:entityName];
     if (limit > 0) [request setFetchLimit:limit];
@@ -27,8 +28,20 @@
     if (sortDescriptors) request.sortDescriptors = sortDescriptors;
     self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                         managedObjectContext:[ABAppDelegate mainContext]
-                                                                          sectionNameKeyPath:nil//@"target.date"
+                                                                          sectionNameKeyPath:sectionKeyPath
                                                                                    cacheName:nil];
+}
+
+-(void)setUpResultsControllerWithEntity:(NSString *)entityName
+                              predicate:(NSPredicate *)predicate
+                                  limit:(NSInteger)limit
+                     andSortDescriptors:(NSArray *)sortDescriptors
+{
+    [self setUpResultsControllerWithEntity:entityName
+                                 predicate:predicate
+                                     limit:limit
+                        andSortDescriptors:sortDescriptors
+                    withSectionNameKeyPath:nil];
 }
 
 -(void)changeRequestEntity:(NSString *)entity

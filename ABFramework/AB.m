@@ -7,7 +7,6 @@
 //
 
 #import "AB.h"
-#import "NSArray+AB.h"
 
 @implementation AB
 

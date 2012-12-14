@@ -43,4 +43,9 @@
     formater.dateFormat = format;
     return [formater dateFromString:self];
 }
+
+-(NSDate *)SQLTimestamp
+{
+    return [self dateWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+}
 @end

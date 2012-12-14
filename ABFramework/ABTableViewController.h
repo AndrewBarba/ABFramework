@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "ABRequired.h"
 
 @protocol TableViewContentChangedDelegate <NSObject>
 -(void)tableViewController:(UITableViewController *)controller contentDidChange:(NSUInteger)numberOfItems;
@@ -27,4 +28,9 @@
                               predicate:(NSPredicate *)predicate
                                   limit:(NSInteger)limit
                      andSortDescriptors:(NSArray *)sortDescriptors;
+-(void)setUpResultsControllerWithEntity:(NSString *)entityName
+                              predicate:(NSPredicate *)predicate
+                                  limit:(NSInteger)limit
+                     andSortDescriptors:(NSArray *)sortDescriptors
+                 withSectionNameKeyPath:(NSString *)sectionKeyPath;
 @end

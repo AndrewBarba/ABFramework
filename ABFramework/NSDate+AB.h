@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABRequired.h"
 
 @interface NSDate (AB)
 -(NSString *)niceTime;

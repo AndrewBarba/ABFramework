@@ -7,6 +7,7 @@
 //
 
 #import "UIView+AB.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UIView (AB)
 -(void)setHidden:(BOOL)hidden withAnimation:(CGFloat)time

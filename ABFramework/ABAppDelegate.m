@@ -57,10 +57,10 @@
     [appDelegate updateContexts];
 }
 
-+(void)saveDocument
++(void)saveDocument:(SuccessHandler)complete
 {
     ABAppDelegate *appDelegate = [ABAppDelegate appDelegate];
-    [appDelegate saveDocument];
+    [appDelegate saveDocument:complete];
 }
 
 /*** LAUNCH SETUP ***/
@@ -70,7 +70,8 @@
     return YES;
 }
 
-/*** CORE DATA SETUP ***/
+/*** CORE DATA PRIVATE SETUP ***/
+/*** These should only be called by this class, use the static accessors ***/
 
 -(void)setupDocument
 {
@@ -91,12 +92,10 @@
         if (self.mainDocument.documentState == UIDocumentStateNormal) {
             [self.mainDocument closeWithCompletionHandler:^(BOOL done){
                 [[NSFileManager defaultManager] removeItemAtURL:self.mainDocument.fileURL error:nil];
-                [self setupDocument];
                 [self useDocument:complete];
             }];
         } else {
             [[NSFileManager defaultManager] removeItemAtURL:self.mainDocument.fileURL error:nil];
-            [self setupDocument];
             [self useDocument:complete];
         }
     }
@@ -158,16 +157,16 @@
     }];
 }
 
--(void)saveDocument
+-(void)saveDocument:(SuccessHandler)complete
 {
     [self.mainDocument performAsynchronousFileAccessUsingBlock:^{
         [self.mainDocument saveToURL:self.mainDocument.fileURL
                     forSaveOperation:UIDocumentSaveForOverwriting
-                   completionHandler:nil];
+                   completionHandler:complete];
     }];
 }
 
-/*** LIFECYLCLE METHODS ***/
+/*** LIFECYLCLE METHODS ***
 
 -(void)applicationDidEnterBackground:(UIApplication *)application
 {
@@ -193,5 +192,5 @@
 {
     
 }
-
+*/
 @end

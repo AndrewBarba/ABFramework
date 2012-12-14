@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABRequired.h"
 
 @interface UITableView (AB)
 -(void)reorderOldArray:(NSArray *)oldObjects toNewArray:(NSArray *)newArray;

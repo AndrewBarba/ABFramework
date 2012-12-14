@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABRequired.h"
 
 @interface UILabel (AB)
 -(void)setTextWithAnimation:(NSString *)text;

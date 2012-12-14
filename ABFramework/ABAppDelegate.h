@@ -26,5 +26,5 @@
 +(void)useDocument:(DoneHandler)complete;
 +(void)resetDocument:(DoneHandler)complete;
 +(void)updateContexts;
-+(void)saveDocument;
++(void)saveDocument:(SuccessHandler)complete;
 @end

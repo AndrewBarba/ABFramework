@@ -7,6 +7,7 @@
 //
 
 #import "ABRequest.h"
+#import "NSString+AB.h"
 
 @implementation ABRequest
 

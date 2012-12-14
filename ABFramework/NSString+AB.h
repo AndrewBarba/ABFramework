@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABRequired.h"
 
 @interface NSString (AB)
 -(id)JSON;
@@ -14,4 +15,5 @@
 -(NSString *)strip;
 -(BOOL)isEmpty;
 -(NSDate *)dateWithFormat:(NSString *)format;
+-(NSDate *)SQLTimestamp;
 @end

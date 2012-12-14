@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ABRequired.h"
 
 @interface NSData (AB)
 -(id)JSON;

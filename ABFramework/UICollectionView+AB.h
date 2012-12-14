@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABRequired.h"
 
 @interface UICollectionView (AB)
 -(void)reorderOldArray:(NSArray *)oldObjects toNewArray:(NSArray *)newArray;

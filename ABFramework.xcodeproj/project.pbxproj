@@ -12,6 +12,7 @@
 		B884BAB0163326D700AEAA08 /* ABActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAB163326D700AEAA08 /* ABActionSheet.m */; };
 		B884BAB1163326D700AEAA08 /* ABAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAD163326D700AEAA08 /* ABAlertView.m */; };
 		B884BAB2163326D700AEAA08 /* ABRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAF163326D700AEAA08 /* ABRequest.m */; };
+		B8A050FC1676F49900B2823D /* ABDispatch.m in Sources */ = {isa = PBXBuildFile; fileRef = B8A050FB1676F49900B2823D /* ABDispatch.m */; };
 		B8D54FCC16337FB90074A7A0 /* ABTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */; };
 		B8D54FD0163387470074A7A0 /* ABCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D54FCF163387470074A7A0 /* ABCollectionViewController.m */; };
 		B8DF8F38164D7C800049B85A /* NSArray+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B8DF8F37164D7C7F0049B85A /* NSArray+AB.m */; };
@@ -53,6 +54,8 @@
 		B884BAAD163326D700AEAA08 /* ABAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABAlertView.m; sourceTree = "<group>"; };
 		B884BAAE163326D700AEAA08 /* ABRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABRequest.h; sourceTree = "<group>"; };
 		B884BAAF163326D700AEAA08 /* ABRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABRequest.m; sourceTree = "<group>"; };
+		B8A050FA1676F49900B2823D /* ABDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABDispatch.h; sourceTree = "<group>"; };
+		B8A050FB1676F49900B2823D /* ABDispatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABDispatch.m; sourceTree = "<group>"; };
 		B8D54FCA16337FB90074A7A0 /* ABTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABTableViewController.h; sourceTree = "<group>"; };
 		B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABTableViewController.m; sourceTree = "<group>"; };
 		B8D54FCE163387470074A7A0 /* ABCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABCollectionViewController.h; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				B8E2059D16321C91009772AC /* AB.m */,
 				B8DF8F3A164D7DE80049B85A /* ABRequired.h */,
 				B8DF8F3B164D7DE80049B85A /* ABRequired.m */,
+				B8E205A016321C91009772AC /* ABAppDelegate.h */,
+				B8E205A116321C91009772AC /* ABAppDelegate.m */,
 				B8430C10165563A9007DE400 /* UIView+AB.h */,
 				B8430C11165563A9007DE400 /* UIView+AB.m */,
 				B884BAAA163326D700AEAA08 /* ABActionSheet.h */,
@@ -144,8 +149,6 @@
 				B884BAAD163326D700AEAA08 /* ABAlertView.m */,
 				B884BAAE163326D700AEAA08 /* ABRequest.h */,
 				B884BAAF163326D700AEAA08 /* ABRequest.m */,
-				B8E205A016321C91009772AC /* ABAppDelegate.h */,
-				B8E205A116321C91009772AC /* ABAppDelegate.m */,
 				B801F26C1653622300DBBFFE /* UILabel+AB.h */,
 				B801F26D1653622300DBBFFE /* UILabel+AB.m */,
 				B8E205A416321C91009772AC /* NSData+AB.h */,
@@ -164,6 +167,8 @@
 				B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */,
 				B8D54FCE163387470074A7A0 /* ABCollectionViewController.h */,
 				B8D54FCF163387470074A7A0 /* ABCollectionViewController.m */,
+				B8A050FA1676F49900B2823D /* ABDispatch.h */,
+				B8A050FB1676F49900B2823D /* ABDispatch.m */,
 				B8E2058916321BAE009772AC /* Supporting Files */,
 			);
 			path = ABFramework;
@@ -244,6 +249,7 @@
 				B8DF8F3C164D7DE90049B85A /* ABRequired.m in Sources */,
 				B801F26E1653622300DBBFFE /* UILabel+AB.m in Sources */,
 				B8430C12165563A9007DE400 /* UIView+AB.m in Sources */,
+				B8A050FC1676F49900B2823D /* ABDispatch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

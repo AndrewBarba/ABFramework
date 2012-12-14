@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ABRequired.h"
 
 @interface UIView (AB)
 -(void)setHidden:(BOOL)hidden withAnimation:(CGFloat)time;
