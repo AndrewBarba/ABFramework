@@ -27,4 +27,5 @@
 +(void)resetDocument:(DoneHandler)complete;
 +(void)updateContexts;
 +(void)saveDocument:(SuccessHandler)complete;
++(void)performImport:(DoneHandler)importBlock;
 @end

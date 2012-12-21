@@ -63,6 +63,14 @@
     [appDelegate saveDocument:complete];
 }
 
++(void)performImport:(DoneHandler)importBlock
+{
+    [[ABAppDelegate importContext] performBlock:^{
+        importBlock();
+        [ABAppDelegate updateContexts];
+    }];
+}
+
 /*** LAUNCH SETUP ***/
 -(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
