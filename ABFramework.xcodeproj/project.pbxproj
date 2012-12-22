@@ -104,6 +104,89 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B805D3741685632A00F5CFFB /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				B8DF8F3A164D7DE80049B85A /* ABRequired.h */,
+				B8DF8F3B164D7DE80049B85A /* ABRequired.m */,
+			);
+			name = Required;
+			sourceTree = "<group>";
+		};
+		B805D3751685633900F5CFFB /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B8E205A016321C91009772AC /* ABAppDelegate.h */,
+				B8E205A116321C91009772AC /* ABAppDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		B805D3761685634D00F5CFFB /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				B8430C10165563A9007DE400 /* UIView+AB.h */,
+				B8430C11165563A9007DE400 /* UIView+AB.m */,
+				B801F26C1653622300DBBFFE /* UILabel+AB.h */,
+				B801F26D1653622300DBBFFE /* UILabel+AB.m */,
+				B8E205AA16321C91009772AC /* UICollectionView+AB.h */,
+				B8E205AB16321C91009772AC /* UICollectionView+AB.m */,
+				B8E205AC16321C91009772AC /* UITableView+AB.h */,
+				B8E205AD16321C91009772AC /* UITableView+AB.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		B805D3771685638F00F5CFFB /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B8E205A416321C91009772AC /* NSData+AB.h */,
+				B8E205A516321C91009772AC /* NSData+AB.m */,
+				B8E205A616321C91009772AC /* NSDate+AB.h */,
+				B8E205A716321C91009772AC /* NSDate+AB.m */,
+				B8E205A816321C91009772AC /* NSString+AB.h */,
+				B8E205A916321C91009772AC /* NSString+AB.m */,
+				B8DF8F36164D7C7F0049B85A /* NSArray+AB.h */,
+				B8DF8F37164D7C7F0049B85A /* NSArray+AB.m */,
+				B805D3711685601800F5CFFB /* NSMutableArray+AB.h */,
+				B805D3721685601800F5CFFB /* NSMutableArray+AB.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		B805D378168563B400F5CFFB /* Concurency */ = {
+			isa = PBXGroup;
+			children = (
+				B8A050FA1676F49900B2823D /* ABDispatch.h */,
+				B8A050FB1676F49900B2823D /* ABDispatch.m */,
+			);
+			name = Concurency;
+			sourceTree = "<group>";
+		};
+		B805D379168563C300F5CFFB /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				B8D54FCA16337FB90074A7A0 /* ABTableViewController.h */,
+				B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */,
+				B8D54FCE163387470074A7A0 /* ABCollectionViewController.h */,
+				B8D54FCF163387470074A7A0 /* ABCollectionViewController.m */,
+				B884BAAA163326D700AEAA08 /* ABActionSheet.h */,
+				B884BAAB163326D700AEAA08 /* ABActionSheet.m */,
+				B884BAAC163326D700AEAA08 /* ABAlertView.h */,
+				B884BAAD163326D700AEAA08 /* ABAlertView.m */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		B805D37A168563DA00F5CFFB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B884BAAE163326D700AEAA08 /* ABRequest.h */,
+				B884BAAF163326D700AEAA08 /* ABRequest.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		B8E2057816321BAE009772AC = {
 			isa = PBXGroup;
 			children = (
@@ -137,40 +220,13 @@
 			isa = PBXGroup;
 			children = (
 				B8E2059C16321C91009772AC /* AB.h */,
-				B8DF8F3A164D7DE80049B85A /* ABRequired.h */,
-				B8DF8F3B164D7DE80049B85A /* ABRequired.m */,
-				B8E205A016321C91009772AC /* ABAppDelegate.h */,
-				B8E205A116321C91009772AC /* ABAppDelegate.m */,
-				B8430C10165563A9007DE400 /* UIView+AB.h */,
-				B8430C11165563A9007DE400 /* UIView+AB.m */,
-				B884BAAA163326D700AEAA08 /* ABActionSheet.h */,
-				B884BAAB163326D700AEAA08 /* ABActionSheet.m */,
-				B884BAAC163326D700AEAA08 /* ABAlertView.h */,
-				B884BAAD163326D700AEAA08 /* ABAlertView.m */,
-				B884BAAE163326D700AEAA08 /* ABRequest.h */,
-				B884BAAF163326D700AEAA08 /* ABRequest.m */,
-				B801F26C1653622300DBBFFE /* UILabel+AB.h */,
-				B801F26D1653622300DBBFFE /* UILabel+AB.m */,
-				B8E205A416321C91009772AC /* NSData+AB.h */,
-				B8E205A516321C91009772AC /* NSData+AB.m */,
-				B8E205A616321C91009772AC /* NSDate+AB.h */,
-				B8E205A716321C91009772AC /* NSDate+AB.m */,
-				B8E205A816321C91009772AC /* NSString+AB.h */,
-				B8E205A916321C91009772AC /* NSString+AB.m */,
-				B8DF8F36164D7C7F0049B85A /* NSArray+AB.h */,
-				B8DF8F37164D7C7F0049B85A /* NSArray+AB.m */,
-				B805D3711685601800F5CFFB /* NSMutableArray+AB.h */,
-				B805D3721685601800F5CFFB /* NSMutableArray+AB.m */,
-				B8E205AA16321C91009772AC /* UICollectionView+AB.h */,
-				B8E205AB16321C91009772AC /* UICollectionView+AB.m */,
-				B8E205AC16321C91009772AC /* UITableView+AB.h */,
-				B8E205AD16321C91009772AC /* UITableView+AB.m */,
-				B8D54FCA16337FB90074A7A0 /* ABTableViewController.h */,
-				B8D54FCB16337FB90074A7A0 /* ABTableViewController.m */,
-				B8D54FCE163387470074A7A0 /* ABCollectionViewController.h */,
-				B8D54FCF163387470074A7A0 /* ABCollectionViewController.m */,
-				B8A050FA1676F49900B2823D /* ABDispatch.h */,
-				B8A050FB1676F49900B2823D /* ABDispatch.m */,
+				B805D3741685632A00F5CFFB /* Required */,
+				B805D3751685633900F5CFFB /* Delegate */,
+				B805D3771685638F00F5CFFB /* Categories */,
+				B805D378168563B400F5CFFB /* Concurency */,
+				B805D379168563C300F5CFFB /* Subclasses */,
+				B805D37A168563DA00F5CFFB /* Network */,
+				B805D3761685634D00F5CFFB /* UIKit */,
 				B8E2058916321BAE009772AC /* Supporting Files */,
 			);
 			path = ABFramework;

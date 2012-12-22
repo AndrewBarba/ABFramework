@@ -66,8 +66,8 @@
 {
     __block NSString *fullPath = [NSString stringWithFormat:@"%@?",path];
     [data enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *value, BOOL *stop){
-        key = [key URLEncode];
-        value = [value URLEncode];
+        key = [key encodeForURL];
+        value = [value encodeForURL];
         fullPath = [fullPath stringByAppendingFormat:@"&%@=%@",key,value];
     }];
     NSLog(@"%@",fullPath);
