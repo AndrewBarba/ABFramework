@@ -12,7 +12,7 @@
 // APP INFO
 #define APP_NAME       @"abarba_app"
 #define BUILD_KEY      [[NSBundle mainBundle] objectForInfoDictionaryKey: (NSString *)kCFBundleVersionKey]
-#define REFRESH_DB_KEY [NSString stringWithFormat:@"%@_%@",APP_NAME,BUILD_KEY]
+#define FIRST_RUN_KEY  [NSString stringWithFormat:@"%@_%@",APP_NAME,BUILD_KEY]
 #define VERSION_KEY    [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
 // COMPLETION HANDLERS

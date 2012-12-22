@@ -11,10 +11,10 @@
 @implementation ABRequired
 +(BOOL)isFirstRun
 {
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:REFRESH_DB_KEY]) {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:FIRST_RUN_KEY]) {
         return NO;
     } else {
-        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:REFRESH_DB_KEY];
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:FIRST_RUN_KEY];
         return YES;
     }
 }
