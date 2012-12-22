@@ -15,7 +15,7 @@
     return [[self dataUsingEncoding:NSUTF8StringEncoding] JSON];
 }
 
--(NSString *)URLEncode
+-(NSString *)encodeForURL
 {
     NSString *escapedString = (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
                                                                                                     NULL,

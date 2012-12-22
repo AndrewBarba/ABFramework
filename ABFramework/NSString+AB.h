@@ -11,7 +11,7 @@
 
 @interface NSString (AB)
 -(id)JSON;
--(NSString *)URLEncode;
+-(NSString *)encodeForURL;
 -(NSString *)strip;
 -(BOOL)isEmpty;
 -(NSDate *)dateWithFormat:(NSString *)format;

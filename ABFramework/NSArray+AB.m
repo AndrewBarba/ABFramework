@@ -15,4 +15,13 @@
         if (visit) visit(obj);
     }
 }
+
+-(id)fold:(id)base withBlock:(id(^)(id obj,id ans))block
+{
+    id ans = base;
+    for (id obj in self) {
+        ans = block(obj,ans);
+    }
+    return ans;
+}
 @end

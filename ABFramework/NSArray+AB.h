@@ -11,4 +11,5 @@
 
 @interface NSArray (AB)
 -(void)map:(ObjectHandler)visit;
+-(id)fold:(id)base withBlock:(id(^)(id obj,id ans))block;
 @end

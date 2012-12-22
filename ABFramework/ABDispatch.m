@@ -10,27 +10,48 @@
 
 @implementation ABDispatch
 
-+(void)dispatchMainQueue:(DoneHandler)block
+void ABDispatchMain(DoneHandler block)
 {
     dispatch_async(dispatch_get_main_queue(),block);
 }
 
-+(void)dispatchBackgroundQueue:(DoneHandler)block
+void ABDispatchMainDelay(DoneHandler block, float after)
+{
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, after * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(),block);
+}
+
+void ABDispatchBackground(DoneHandler block)
 {
     dispatch_queue_t queue = dispatch_queue_create("com.abarba.dispatchQueue", NULL);
     dispatch_async(queue,block);
 }
 
+void ABDispatchBackgroundDelay(DoneHandler block, float after)
+{
+    dispatch_queue_t queue = dispatch_queue_create("com.abarba.dispatchQueue", NULL);
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, after * NSEC_PER_SEC);
+    dispatch_after(popTime, queue, block);
+}
+
++(void)dispatchMainQueue:(DoneHandler)block
+{
+    ABDispatchMain(block);
+}
+
++(void)dispatchBackgroundQueue:(DoneHandler)block
+{
+    ABDispatchBackground(block);
+}
+
 +(void)dispatchAfter:(CGFloat)seconds mainQueue:(DoneHandler)block
 {
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, seconds * NSEC_PER_SEC);
-    dispatch_after(popTime, dispatch_get_main_queue(),block);
+    ABDispatchMainDelay(block,seconds);
 }
 
 +(void)dispatchAfter:(CGFloat)seconds backgroundQueue:(DoneHandler)block
 {
-    dispatch_queue_t queue = dispatch_queue_create("com.abarba.dispatchQueue", NULL);
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, seconds * NSEC_PER_SEC);
-    dispatch_after(popTime, queue, block);
+    ABDispatchBackgroundDelay(block,seconds);
 }
+
 @end

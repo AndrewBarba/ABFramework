@@ -19,6 +19,7 @@
 typedef void(^DoneHandler)       (void);
 typedef void(^SuccessHandler)    (BOOL);
 typedef void(^ObjectHandler)     (id);
+typedef BOOL(^ObjectHandlerTest) (id);
 typedef void(^IntegerHandler)    (NSUInteger);
 typedef void(^ArrayHandler)      (NSArray*);
 typedef void(^DictionaryHandler) (NSDictionary*);

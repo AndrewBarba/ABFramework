@@ -23,7 +23,7 @@
 -(void)changeRequestPredicate:(NSPredicate *)predicate;
 -(void)animateUpdates;
 -(NSUInteger)numberOfObjects;
-- (void)performFetch;
+-(void)performFetch;
 -(void)setUpResultsControllerWithEntity:(NSString *)entityName
                               predicate:(NSPredicate *)predicate
                                   limit:(NSInteger)limit
