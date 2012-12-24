@@ -63,6 +63,11 @@
     [appDelegate saveDocument:complete];
 }
 
+/*
+ * Imports data in the background and then updates the main context
+ * You may need to update the context more often (manually) if importing a large data set
+ * Generally I update sqrt(n) times for n pieces of data. I found this to be the best combo of speed and memory efficiency
+ */
 +(void)performImport:(DoneHandler)importBlock
 {
     [[ABAppDelegate importContext] performBlock:^{
@@ -94,6 +99,9 @@
     }
 }
 
+/*
+ * Reset the document. Useful for modelchanges
+ */
 -(void)resetDocument:(DoneHandler)complete
 {
     if ([[NSFileManager defaultManager] fileExistsAtPath:[self.mainDocument.fileURL path]]) {
@@ -109,6 +117,9 @@
     }
 }
 
+/*
+ * Begin using the document
+ */
 -(void)useDocument:(DoneHandler)complete
 {
     [self setupDocument];
@@ -129,6 +140,9 @@
     }
 }
 
+/*
+ * Create the import context on a background thread
+ */
 -(void)setupImportContext
 {
     self.importContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
@@ -137,17 +151,22 @@
     [self initContextNotifications];
 }
 
+/*
+ * Merge the import context and the main context
+ */
 -(void)merge:(NSNotification *)notification
 {
     [self.mainDocument.managedObjectContext performBlockAndWait:^{
         [self.mainDocument.managedObjectContext mergeChangesFromContextDidSaveNotification:notification];
         [self.importContext performBlock:^{
             [self.importContext reset];
-//            NSLog(@"Merged importContext");
         }];
     }];
 }
 
+/*
+ * Setup a notifification to merge contexts everytime the import context save something
+ */
 -(void)initContextNotifications
 {
     [self.mainDocument.managedObjectContext performBlock:^{
@@ -158,6 +177,9 @@
     }];
 }
 
+/*
+ * Save the import context. If notifications are properly setup, this will automatically update the main context
+ */
 -(void)updateContexts
 {
     [self.importContext performBlockAndWait:^{
@@ -165,6 +187,9 @@
     }];
 }
 
+/*
+ * Save the UIDocument to disk
+ */
 -(void)saveDocument:(SuccessHandler)complete
 {
     [self.mainDocument performAsynchronousFileAccessUsingBlock:^{
