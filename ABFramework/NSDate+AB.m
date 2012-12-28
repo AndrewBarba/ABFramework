@@ -42,4 +42,25 @@
     
     return [NSString stringWithFormat:@"%.0f %@ ago",diff,tense];
 }
+
+-(NSString *)niceTimeNew
+{
+    NSArray *times  = @[@60,      @60,      @24,    @7,    @4.3,   @10];
+    NSArray *tenses = @[@"second",@"minute",@"hour",@"day",@"week",@"month",@"year"];
+    
+    __block CGFloat diff = fabs([self timeIntervalSinceNow]);
+    __block NSString *tense;
+    __block CGFloat acc = 1.0;
+    [times enumerateObjectsUsingBlock:^(NSNumber *num, NSUInteger index, BOOL *stop){
+        acc *= [num floatValue];
+        if (diff < acc) {
+            if (index > 0) diff = floorf(diff/acc);
+            tense = tenses[index];
+            *stop = YES;
+        }
+    }];
+    
+    if (diff != 1) tense = [tense stringByAppendingString:@"s"];
+    return [NSString stringWithFormat:@"%.0f %@ ago",diff,tense];
+}
 @end

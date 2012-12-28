@@ -10,6 +10,7 @@
 		B801F26E1653622300DBBFFE /* UILabel+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B801F26D1653622300DBBFFE /* UILabel+AB.m */; };
 		B805D3731685601800F5CFFB /* NSMutableArray+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B805D3721685601800F5CFFB /* NSMutableArray+AB.m */; };
 		B8430C12165563A9007DE400 /* UIView+AB.m in Sources */ = {isa = PBXBuildFile; fileRef = B8430C11165563A9007DE400 /* UIView+AB.m */; };
+		B84CE3F2168BA8B000C43C70 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84CE3F1168BA8B000C43C70 /* FacebookSDK.framework */; };
 		B884BAB0163326D700AEAA08 /* ABActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAB163326D700AEAA08 /* ABActionSheet.m */; };
 		B884BAB1163326D700AEAA08 /* ABAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAD163326D700AEAA08 /* ABAlertView.m */; };
 		B884BAB2163326D700AEAA08 /* ABRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B884BAAF163326D700AEAA08 /* ABRequest.m */; };
@@ -50,6 +51,8 @@
 		B805D3721685601800F5CFFB /* NSMutableArray+AB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+AB.m"; sourceTree = "<group>"; };
 		B8430C10165563A9007DE400 /* UIView+AB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AB.h"; sourceTree = "<group>"; };
 		B8430C11165563A9007DE400 /* UIView+AB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AB.m"; sourceTree = "<group>"; };
+		B84CE3F1168BA8B000C43C70 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		B84CE3F8168BA8E100C43C70 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = ../FacebookSDK/FacebookSDK.framework/Versions/A/Resources/FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		B884BAAA163326D700AEAA08 /* ABActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABActionSheet.h; sourceTree = "<group>"; };
 		B884BAAB163326D700AEAA08 /* ABActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABActionSheet.m; sourceTree = "<group>"; };
 		B884BAAC163326D700AEAA08 /* ABAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABAlertView.h; sourceTree = "<group>"; };
@@ -98,6 +101,7 @@
 				B8E2059716321BE0009772AC /* UIKit.framework in Frameworks */,
 				B8E2059516321BD9009772AC /* CoreGraphics.framework in Frameworks */,
 				B8E2058716321BAE009772AC /* Foundation.framework in Frameworks */,
+				B84CE3F2168BA8B000C43C70 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +211,8 @@
 		B8E2058516321BAE009772AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B84CE3F8168BA8E100C43C70 /* FacebookSDKResources.bundle */,
+				B84CE3F1168BA8B000C43C70 /* FacebookSDK.framework */,
 				B8E2059A16321BEE009772AC /* CoreData.framework */,
 				B8E2059816321BE9009772AC /* QuartzCore.framework */,
 				B8E2059616321BE0009772AC /* UIKit.framework */,
@@ -365,6 +371,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/ABFramework.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ABFramework/ABFramework-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -377,6 +387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/ABFramework.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../FacebookSDK\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ABFramework/ABFramework-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
